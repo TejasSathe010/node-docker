@@ -7,7 +7,12 @@ WORKDIR /app
 COPY package.json .
 
 # RUN - runs at build time
-RUN npm install
+# RUN npm install
+ARG NODE_ENV
+RUN if [ "$NODE_ENV" = "development" ]; \
+    then npm install; \
+    else npm install --only=production; \
+    fi
 
 # Optimization technique (Why 2 copy commands) - Layer and caching (logic)
 COPY . ./
