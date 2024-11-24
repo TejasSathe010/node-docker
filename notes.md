@@ -16,3 +16,8 @@ COPY . ./
 # A Config which is shared between dev and prod env.
 # For dev - docker-compose -f docker-compose.yml -f docker-compose.dev.yml up -d
 # For prod - docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d --build
+
+
+# (base) tejassathe@Tejass-Air node-docker % docker exec -it node-docker-mongo-1 bash
+
+# root@d96be17c8928:/# mongosh -u "root" -p "tejas@3498"
